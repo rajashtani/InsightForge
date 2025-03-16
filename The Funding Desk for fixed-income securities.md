@@ -404,7 +404,7 @@ graph LR
 ## 4. Revenue Strategies
 
 
-The Funding Desk is not just a cost center for securing financing—it is a **profit engine** that strategically monetizes its balance sheet, The Funding Desk is not just a cost center for securing financing—it is a **profit engine** that strategically monetizes its balance sheet, collateral, and liquidity access. By leveraging **transfer pricing, sponsored repos, margin loans, securities lending, agency lending, and structured repos**, the desk generates revenue while supporting the broader financial ecosystem.  
+The Funding Desk is not just a cost center for securing financing—it is a **profit engine** that strategically monetizes its balance sheet, collateral, and liquidity access. By leveraging **transfer pricing, sponsored repos, margin loans, securities lending, agency lending, and structured repos**, the desk generates revenue while supporting the broader financial ecosystem.  
 
 This section explores how the Funding Desk **optimizes revenue** through:  
 - **Internal capital allocation (transfer pricing)** → Charging internal desks for funding, collateral, and liquidity services.  
