@@ -795,7 +795,6 @@ graph TD
 
 The Funding Desk’s ability to manage liquidity, funding, and trading efficiently hinges on robust legal frameworks and sophisticated collateral optimization strategies. Legal agreements such as **Master Repurchase Agreements (MRAs)** and **Master Securities Lending Agreements (MSLAs)** provide the contractual backbone for repo and securities lending operations, ensuring clarity, compliance, and risk mitigation. Simultaneously, collateral optimization leverages these agreements to maximize asset efficiency, reduce costs, and meet regulatory demands in a market shaped by quantitative tightening (QT) and elevated SOFR rates (~2% as of March 2025). Custodians like BNY Mellon (BONY) and Euroclear play a pivotal role in this ecosystem, particularly in the tri-party context, by allocating collateral dynamically to enhance optimization and support legal agreements. This section explores these components in detail, offering mechanics, examples, and integration strategies to enhance the desk’s operational and revenue potential.
 
----
 
 ### Master Repurchase Agreements (MRAs)
 
@@ -814,8 +813,6 @@ The desk relies on MRAs to standardize and streamline repurchase agreements, a c
 - **Integration**:  
   - **Funding Synergy**: MRAs enable $1B in daily repo funding (Section 2.3), supporting market-making and firm needs with $980M proceeds after haircuts (Section 6.1 for a $300M example).  
   - **Scalability**: Facilitates rapid scaling to meet $5B in daily trading capacity across D2D and D2C channels.
-
----
 
 ### Master Securities Lending Agreements (MSLAs)
 
