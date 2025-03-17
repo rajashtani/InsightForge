@@ -8,11 +8,11 @@
 
 1. [Introduction](#1-introduction)
 2. [Core Operations](#2-core-operations)  
-   - Market-Making in Fixed Income  
-   - Linear Flow Business and Requests for Quotes (RFQs)  
    - Repurchase Agreements (Repos)  
    - Tri-Party Repos  
-   - Funding the Firm  
+   - Funding the Firm
+   - Market-Making in Fixed Income  
+   - Linear Flow Business and Requests for Quotes (RFQs)    
 3. [Strategic Partnerships](#3-strategic-partnerships)  
    - Treasury Desk  
    - Prime Brokerage  
@@ -50,32 +50,6 @@ In this environment—marked by moderating inflation (2-3%) and heightened Treas
 ## 2. Core Operations
 
 The Funding Desk is the backbone of a financial institution’s fixed-income operations, managing workflows that blend market-making, funding, and client financing to optimize liquidity and revenue. Unlike the Rates Desk, which focuses on interest rate derivatives, or the Spread Product Desk, which handles credit-risk securities, the Funding Desk’s main job is to fund the firm’s trading inventory and client activities while making profits through its market-making role. Its core workflows—market-making with a funding lens and bespoke financing via Requests for Quotes (RFQs)—run across **Dealer-to-Dealer (D2D)** and **Dealer-to-Client (D2C)** channels, supporting both interdealer liquidity and client trades. With lower SOFR at ~2% and repo rates at 1.8-2.2%, these operations are key in a market shaped by Fed quantitative tightening (QT) and rising Treasury collateral demand.
-
-### Market-Making with a Funding Focus
-
-Market-making is a core task for the Funding Desk, but it’s distinct because it prioritizes funding efficiency and inventory management over speculative bets. The desk quotes bid and ask prices for fixed-income securities—mainly U.S. Treasuries, agency securities, and high-grade corporates—while keeping this inventory funded cost-effectively through tools like repurchase agreements (repos) and tri-party repos. This dual role spans **Dealer-to-Dealer (D2D)** and **Dealer-to-Client (D2C)** interactions, balancing interdealer liquidity with client service.
-
-- **D2D Market-Making**: In D2D, the desk trades with other financial institutions (e.g., banks, broker-dealers) via platforms like BrokerTec or direct interbank channels to manage inventory and support firm-wide liquidity.
-- **D2C Market-Making**: In D2C, the desk works directly with clients—hedge funds, pension funds, asset managers—offering liquidity tailored to their needs, often pairing it with financing like margin loans.
-- **Funding Integration**: The desk’s market-making ties directly to its funding role, maintaining a large Treasury inventory funded via repos to support both interdealer and client trades. Daily flow trades generate revenue to offset funding costs and boost profits.
-- **Risk and Revenue Dynamics**: Holding inventory brings rate risk, but the desk focuses on low-risk spreads, not big market bets. Hedging with swaps or futures, often with the Rates Desk, keeps profits stable while aligning funding costs with market benchmarks.
-
-**Examples:**
-- **D2D**: The desk buys $200 million in U.S. Treasuries from another dealer at 99.98, funding it with a tri-party repo at 2% that raises $196 million after a 2% haircut (costing ~$11,000 daily). It sells $100 million to another dealer at 100.00, earning a $20,000 spread, and keeps $100 million for a later client sale or repo.
-- **D2C**: A pension fund asks for $150 million in Treasuries. The desk quotes 100.05 (cost 99.95), earning $150,000, funded by a $153 million repo at 2% (~$8,000 daily cost). It offers a $120 million margin loan at 3% ($10,000 daily interest), totaling $160,000 daily revenue.
-
-### Bespoke Financing via Requests for Quotes (RFQs)
-
-The RFQ workflow complements market-making by handling tailored, high-value trades that need custom funding and liquidity solutions, executed through **Dealer-to-Client (D2C)** and **Dealer-to-Dealer (D2D)** channels. Unlike the fast-paced, tight-spread flow business, RFQs involve bigger sizes, wider spreads, and a mix of trading and financing, making the desk a one-stop shop for clients and a liquidity bridge for dealers.
-
-- **D2C RFQs**: Clients—via phone, email, or platforms like Bloomberg, Tradeweb, or MarketAxess—request firm prices for specific securities, often less liquid or larger than flow trades. By 2025, over 60% of Treasury RFQs are electronic, speeding up execution.
-- **D2D RFQs**: The desk uses RFQs with other dealers, often via interdealer brokers or electronic networks, to source securities or manage inventory.
-- **Funding and Collateral Synergy**: RFQs rely on funding tools—repos, reverse repos, margin loans—to execute trades and boost profits. The desk works with Prime Brokerage for client financing and the Rates Desk for hedging.
-- **Revenue and Scale**: RFQs offer higher margins (0.10-0.20 spreads) than flow trades (0.05), with financing adding 1-2% interest income. Risk is higher but managed with hedging and collateral buffers.
-
-**Examples:**
-- **D2C**: A hedge fund requests $300 million in 10-year Treasuries. The desk quotes 100.05 (cost 99.95), earning $300,000, funded by a $294 million repo at 2% (~$16,000 daily cost). It offers a $240 million margin loan at 3% ($20,000 daily interest) and repos the client’s $60 million collateral at 2.1% vs. 2%, netting $167 daily, for a total of $303,834 daily revenue.
-- **D2D**: To fill the $300 million RFQ, the desk buys $300 million in Treasuries from a regional bank at 99.95, funded by a $294 million repo at 2%. It sells to the client at 100.05 ($300,000 spread). Or, it offloads $200 million excess inventory to another dealer at 100.00 (cost 99.90), earning $200,000.
 
 ### Repurchase Agreements (Repos)
 
@@ -154,6 +128,31 @@ graph LR
     class A,B,C,D,E f
     class F,G p
 ```
+### Market-Making with a Funding Focus
+
+Market-making is a core task for the Funding Desk, but it’s distinct because it prioritizes funding efficiency and inventory management over speculative bets. The desk quotes bid and ask prices for fixed-income securities—mainly U.S. Treasuries, agency securities, and high-grade corporates—while keeping this inventory funded cost-effectively through tools like repurchase agreements (repos) and tri-party repos. This dual role spans **Dealer-to-Dealer (D2D)** and **Dealer-to-Client (D2C)** interactions, balancing interdealer liquidity with client service.
+
+- **D2D Market-Making**: In D2D, the desk trades with other financial institutions (e.g., banks, broker-dealers) via platforms like BrokerTec or direct interbank channels to manage inventory and support firm-wide liquidity.
+- **D2C Market-Making**: In D2C, the desk works directly with clients—hedge funds, pension funds, asset managers—offering liquidity tailored to their needs, often pairing it with financing like margin loans.
+- **Funding Integration**: The desk’s market-making ties directly to its funding role, maintaining a large Treasury inventory funded via repos to support both interdealer and client trades. Daily flow trades generate revenue to offset funding costs and boost profits.
+- **Risk and Revenue Dynamics**: Holding inventory brings rate risk, but the desk focuses on low-risk spreads, not big market bets. Hedging with swaps or futures, often with the Rates Desk, keeps profits stable while aligning funding costs with market benchmarks.
+
+**Examples:**
+- **D2D**: The desk buys $200 million in U.S. Treasuries from another dealer at 99.98, funding it with a tri-party repo at 2% that raises $196 million after a 2% haircut (costing ~$11,000 daily). It sells $100 million to another dealer at 100.00, earning a $20,000 spread, and keeps $100 million for a later client sale or repo.
+- **D2C**: A pension fund asks for $150 million in Treasuries. The desk quotes 100.05 (cost 99.95), earning $150,000, funded by a $153 million repo at 2% (~$8,000 daily cost). It offers a $120 million margin loan at 3% ($10,000 daily interest), totaling $160,000 daily revenue.
+
+### Bespoke Financing via Requests for Quotes (RFQs)
+
+The RFQ workflow complements market-making by handling tailored, high-value trades that need custom funding and liquidity solutions, executed through **Dealer-to-Client (D2C)** and **Dealer-to-Dealer (D2D)** channels. Unlike the fast-paced, tight-spread flow business, RFQs involve bigger sizes, wider spreads, and a mix of trading and financing, making the desk a one-stop shop for clients and a liquidity bridge for dealers.
+
+- **D2C RFQs**: Clients—via phone, email, or platforms like Bloomberg, Tradeweb, or MarketAxess—request firm prices for specific securities, often less liquid or larger than flow trades. By 2025, over 60% of Treasury RFQs are electronic, speeding up execution.
+- **D2D RFQs**: The desk uses RFQs with other dealers, often via interdealer brokers or electronic networks, to source securities or manage inventory.
+- **Funding and Collateral Synergy**: RFQs rely on funding tools—repos, reverse repos, margin loans—to execute trades and boost profits. The desk works with Prime Brokerage for client financing and the Rates Desk for hedging.
+- **Revenue and Scale**: RFQs offer higher margins (0.10-0.20 spreads) than flow trades (0.05), with financing adding 1-2% interest income. Risk is higher but managed with hedging and collateral buffers.
+
+**Examples:**
+- **D2C**: A hedge fund requests $300 million in 10-year Treasuries. The desk quotes 100.05 (cost 99.95), earning $300,000, funded by a $294 million repo at 2% (~$16,000 daily cost). It offers a $240 million margin loan at 3% ($20,000 daily interest) and repos the client’s $60 million collateral at 2.1% vs. 2%, netting $167 daily, for a total of $303,834 daily revenue.
+- **D2D**: To fill the $300 million RFQ, the desk buys $300 million in Treasuries from a regional bank at 99.95, funded by a $294 million repo at 2%. It sells to the client at 100.05 ($300,000 spread). Or, it offloads $200 million excess inventory to another dealer at 100.00 (cost 99.90), earning $200,000.
 
 ### Conclusion
 
