@@ -86,7 +86,7 @@ Repos are a key funding tool, letting the desk borrow cash short-term against it
 **Examples:**
 - **Basic Repo**: The desk repos $100 million in Treasuries for $99 million (2% haircut) at 2% (~$5,500 daily cost), repurchasing them for $99.2 million the next day to fund inventory.
 - **Reverse Repo**: The desk lends $294 million at 2.1% to borrow $300 million in Treasuries (2% haircut), using them for a $300 million RFQ sale at 100.05 ($300,000 spread).
-- **Matched Book**: The desk repos $300 million in Treasuries at 2%, raising $294 million (~$16,000 daily cost), and reverse repos $294 million at 2.1% (~$17,000 daily revenue), netting $300,000 annually from the 0.1% spread.
+- **Matched Book**: The desk repos $300 million in Treasuries at 2%, raising $294 million (~$16,000 daily cost), and reverse repos $294 million at 2.1% (~$17,000 daily revenue, netting $300,000 annually from the 0.1% spread.
 
 **Table: Haircuts and Repo Rates Across Market Scenarios**
 
