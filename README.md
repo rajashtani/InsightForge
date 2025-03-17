@@ -2,8 +2,3 @@ Welcome to **InsightForge**—a collection of detailed write-ups exploring the w
 
 - **What’s Inside:** Comprehensive guides on tech innovations, business frameworks, and their intersections.
 - **Goal:** Equip you with knowledge to understand, adapt, and thrive.
-
-**How to Use This Repository**
-
-- Browse individual write-ups in the /docs folder.
-- Each write-up clearly indicates its focus: Technology, Business, or Both.
