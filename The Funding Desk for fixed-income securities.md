@@ -1241,7 +1241,6 @@ graph TD
     class A,B,C,D,E,F f
     class G p
 ```
----
 
 ### Case Study 2: Firm Funding with SBL and Tri-Party Repo
 - **Scenario**: $800M firm need met with diverse funding.
@@ -1273,7 +1272,6 @@ graph TD
     class A,B,C,D,E f
     class F,G p
 ```
----
 
 ### Case Study 3: Dealer-to-Dealer and Dealer-to-Client Synergy
 
