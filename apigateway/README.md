@@ -350,6 +350,72 @@ curl localhost:32178
 - Replace `192.168.64.15` with your VM’s IP if it differs.
 - For APISIX v2.x, adjust the `ADMIN_API_VERSION` to `v2` in Step 4.
 
+## Advanced Topics
+
+This section covers enhancements to the base setup, focusing on exposing the APISIX Gateway using a LoadBalancer service type with MetalLB instead of NodePort, providing a more production-like external access method.
+
+### Using LoadBalancer with MetalLB
+
+1. **Enable MetalLB in MicroK8s**  
+   MetalLB provides LoadBalancer functionality in environments without a native cloud provider load balancer (like a local VM). Enable it with a specific IP range:
+
+   ```bash
+   microk8s enable metallb:10.64.140.43-10.64.140.49
+   ```
+
+   - This command enables the MetalLB addon and configures it to use the IP range `10.64.140.43` to `10.64.140.49`. Ensure this range is within your local network and does not conflict with existing IPs.
+
+2. **Modify APISIX Installation to Use LoadBalancer**  
+   In Step 4, replace `service.type=NodePort` with `service.type=LoadBalancer` in the Helm install command:
+
+   ```bash
+   helm install apisix apisix/apisix \
+     --set service.type=LoadBalancer \
+     --set ingress-controller.enabled=true \
+     --create-namespace \
+     --namespace ingress-apisix \
+     --set ingress-controller.config.apisix.serviceNamespace=ingress-apisix \
+     --set ingress-controller.config.apisix.adminAPIVersion=$ADMIN_API_VERSION
+   ```
+
+3. **Verify the Service**  
+   Check the services in the `ingress-apisix` namespace:
+
+   ```bash
+   kubectl get service -n ingress-apisix
+   ```
+
+   **Example Output (Before MetalLB):**
+   ```
+   NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+   apisix-gateway                LoadBalancer   10.152.183.220   <pending>     80:31642/TCP   5m
+   ```
+
+   **Example Output (After MetalLB):**
+   ```
+   NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)        AGE
+   apisix-gateway                LoadBalancer   10.152.183.220   10.64.140.43    80/TCP         5m
+   ```
+
+   - Initially, the `EXTERNAL-IP` shows `<pending>`. Once MetalLB assigns an IP from the configured range (e.g., `10.64.140.43`), it updates to a specific address.
+
+4. **Access the External IP Directly**  
+   With `service.type=LoadBalancer` and MetalLB, you can now access the APISIX Gateway directly via the assigned external IP (e.g., `10.64.140.43`) without needing to use the VM’s IP and a NodePort (e.g., `192.168.64.15:32178`):
+
+   ```bash
+   curl http://10.64.140.43
+   ```
+
+   - This eliminates the additional hop required with NodePort, as the LoadBalancer IP is directly routable within your local network.
+
+### Benefits
+- **Simplified Access**: Direct access to the external IP mimics cloud environments more closely, avoiding port forwarding or NodePort mappings.
+- **Scalability Prep**: Using LoadBalancer prepares the setup for multi-node clusters where MetalLB can distribute traffic.
+
+### Notes
+- Ensure the IP range (`10.64.140.43-10.64.140.49`) is compatible with your local network. Adjust it if necessary (e.g., to match `192.168.64.x` if that’s your VM’s subnet).
+- MetalLB must be enabled before deploying APISIX with `LoadBalancer`, or you’ll need to update the service post-installation.
+
 ## References
 
 1. **APISIX Ingress Controller GitHub**: [https://github.com/apache/apisix-ingress-controller](https://github.com/apache/apisix-ingress-controller) - Official GitHub repository for the APISIX Ingress Controller.
