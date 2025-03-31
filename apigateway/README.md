@@ -350,6 +350,8 @@ curl localhost:32178
 - Replace `192.168.64.15` with your VM’s IP if it differs.
 - For APISIX v2.x, adjust the `ADMIN_API_VERSION` to `v2` in Step 4.
 
+---
+
 ## Advanced Topics
 
 This section covers enhancements to the base setup, focusing on exposing the APISIX Gateway using a LoadBalancer service type with MetalLB instead of NodePort, providing a more production-like external access method.
@@ -415,6 +417,8 @@ This section covers enhancements to the base setup, focusing on exposing the API
 ### Notes
 - Ensure the IP range (`10.64.140.43-10.64.140.49`) is compatible with your local network. Adjust it if necessary (e.g., to match `192.168.64.x` if that’s your VM’s subnet).
 - MetalLB must be enabled before deploying APISIX with `LoadBalancer`, or you’ll need to update the service post-installation.
+
+---
 
 ## References
 
