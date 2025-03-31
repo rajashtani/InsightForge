@@ -213,6 +213,7 @@ https://192.168.64.15:10443/#/login
 
 Log in using the token from the previous step.
 
+<img src="./kube.jpg">
 ---
 
 ## Step 6: Deploy a Demo Application
@@ -286,7 +287,7 @@ curl localhost:32178
   }
 }
 ```
-
+<img src="./kube2.jpg">
 ---
 
 ## Notes
