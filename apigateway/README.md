@@ -429,7 +429,9 @@ This section covers enhancements to the base setup, focusing on exposing the API
 
 ## References
 
-1. **APISIX Ingress Controller GitHub**: [https://github.com/apache/apisix-ingress-controller](https://github.com/apache/apisix-ingress-controller) - Official GitHub repository for the APISIX Ingress Controller.
-2. **APISIX Minikube Deployment Docs**: [https://apisix.apache.org/docs/ingress-controller/deployments/minikube/](https://apisix.apache.org/docs/ingress-controller/deployments/minikube/) - Documentation for deploying APISIX on Minikube (related reference).
-3. **Docker HTTP/HTTPS Echo**: [https://code.mendhak.com/docker-http-https-echo/](https://code.mendhak.com/docker-http-https-echo/) - Source for the echo server used in the demo application.
-4. **Multipass**: [https://github.com/canonical/multipass](https://github.com/canonical/multipass) - Virtual Ubuntu instances.
+1. **Multipass**: [https://github.com/canonical/multipass](https://github.com/canonical/multipass) - Virtual Ubuntu instances.
+2. **Microk8s**: [https://github.com/canonical/microk8s](https://github.com/canonical/microk8s) - Single-package fully conformant lightweight Kubernetes.
+3. **APISIX**: [https://github.com/apache/apisix](https://github.com/apache/apisix) - Cloud-Native API Gateway.
+4. **APISIX Ingress Minikube Deployment**: [https://apisix.apache.org/docs/ingress-controller/deployments/minikube/](https://apisix.apache.org/docs/ingress-controller/deployments/minikube/) - Documentation for deploying APISIX on Minikube (related reference).
+5. **HTTP/HTTPS Echo**: [https://code.mendhak.com/docker-http-https-echo/](https://code.mendhak.com/docker-http-https-echo/) - Source for the echo server used in the demo application.
+  
