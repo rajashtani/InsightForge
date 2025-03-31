@@ -37,6 +37,11 @@ graph TD
     J -->|Manages| H
     K -->|Stores Config| H
     M -->|Serves| L
+
+    classDef f fill:#9fecf8,stroke:#333
+    classDef p fill:#bfb,stroke:#333
+    class A,B f
+    class C,D,E p
 ```
 ---
 
