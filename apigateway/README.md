@@ -342,6 +342,7 @@ curl localhost:32178
 }
 ```
 <img src="./img/remote_browser.jpg">
+
 ---
 
 ## Notes
