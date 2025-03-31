@@ -215,6 +215,8 @@ Log in using the token from the previous step.
 
 <img src="./kube.jpg">
 
+<img src="./kube2.jpg">
+
 ---
 
 ## Step 6: Deploy a Demo Application
@@ -288,7 +290,6 @@ curl localhost:32178
   }
 }
 ```
-<img src="./kube2.jpg">
 
 ---
 
