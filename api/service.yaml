@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: echo-svc
+  name: echo-service
+  namespace: demo
+spec:
+  #type: NodePort
+  ports:
+  - name: http-echo
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: echo-server
