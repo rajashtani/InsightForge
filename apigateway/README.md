@@ -266,8 +266,6 @@ Log in using the token from the previous step.
 
 <img src="./kube.jpg">
 
-<img src="./kube2.jpg">
-
 ---
 
 ## Step 6: Deploy a Demo Application
@@ -299,6 +297,8 @@ kubectl apply -f ingress.yaml
 ```
 
 Verify the demo resources:
+
+<img src="./kube2.jpg">
 
 ```bash
 kubectl get pod,service -n demo
