@@ -264,7 +264,7 @@ https://192.168.64.15:10443/#/login
 
 Log in using the token from the previous step.
 
-<img src="./kube.jpg">
+<img src="./img/kube.jpg">
 
 ---
 
@@ -298,7 +298,7 @@ kubectl apply -f ingress.yaml
 
 Verify the demo resources:
 
-<img src="./kube2.jpg">
+<img src="./img/kube2.jpg">
 
 ```bash
 kubectl get pod,service -n demo
@@ -341,7 +341,7 @@ curl localhost:32178
   }
 }
 ```
-
+<img src="./img/remote_browser.jpg">
 ---
 
 ## Notes
