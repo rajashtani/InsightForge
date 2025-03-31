@@ -298,4 +298,8 @@ curl localhost:32178
 - Replace `192.168.64.15` with your VM’s IP if it differs.
 - For APISIX v2.x, adjust the `ADMIN_API_VERSION` to `v2` in Step 4.
 
-This setup provides a fully functional local API Gateway on Kubernetes for development and testing purposes.
+## References
+
+1. **APISIX Ingress Controller GitHub**: [https://github.com/apache/apisix-ingress-controller](https://github.com/apache/apisix-ingress-controller) - Official GitHub repository for the APISIX Ingress Controller.
+2. **APISIX Minikube Deployment Docs**: [https://apisix.apache.org/docs/ingress-controller/deployments/minikube/](https://apisix.apache.org/docs/ingress-controller/deployments/minikube/) - Documentation for deploying APISIX on Minikube (related reference).
+3. **Docker HTTP/HTTPS Echo**: [https://code.mendhak.com/docker-http-https-echo/](https://code.mendhak.com/docker-http-https-echo/) - Source for the echo server used in the demo application.
