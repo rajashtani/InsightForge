@@ -59,7 +59,6 @@ graph TD
 
 ## Prerequisites
 
-- **Multipass**: A tool to quickly generate cloud-style Ubuntu VMs on Linux, macOS, or Windows.
 - **Supported OS**: Linux, macOS, or Windows.
 - **Hardware**: At least 4GB RAM, 10GB disk space, and 2 CPU cores available for the VM.
 
