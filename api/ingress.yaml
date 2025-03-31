@@ -1,0 +1,14 @@
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: httpserver-route
+  namespace: demo
+spec:
+  http:
+  - name: rule1
+    match:
+      paths:
+      - /*
+    backends:
+       - serviceName: echo-service
+         servicePort: 8080
