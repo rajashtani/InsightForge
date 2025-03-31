@@ -1,7 +1,7 @@
 # API Gateway on a Local Kubernetes Instance with Multipass
 
 ## Introduction
-This guide walks you through setting up a local API Gateway using Multipass and MicroK8s on an Ubuntu virtual machine. I used a Mac Pro with an Apple M2 Pro processor and 32GB of RAM for this setup, ensuring smooth performance while running the VM and Kubernetes cluster locally. By using Multipass to create a lightweight VM and MicroK8s for a minimal Kubernetes cluster, you can quickly deploy the APISIX API Gateway along with a demo application for testing. This setup provides a self-contained environment that mirrors cloud-based Kubernetes deployments, making it ideal for development, experimentation, and learning. The guide covers everything from creating the VM and configuring Kubernetes to installing APISIX, accessing the dashboard, and deploying a sample application—all optimized for a local workflow.
+This guide walks you through setting up a local API Gateway using Multipass and MicroK8s. I used a Mac Pro with an Apple M2 Pro processor and 32GB of RAM for this setup, ensuring smooth performance while running the VM and Kubernetes cluster locally. By using Multipass to create a lightweight virtual machine (Ubuntu) and MicroK8s for a minimal Kubernetes cluster, you can quickly deploy the APISIX API Gateway along with a demo application for testing. This setup provides a self-contained environment that mirrors cloud-based Kubernetes deployments, making it ideal for development, experimentation, and learning. The guide covers everything from creating the VM and configuring Kubernetes to installing APISIX, accessing the dashboard, and deploying a sample application—all optimized for a local workflow.
 
 ---
 ## Architecture Overview
