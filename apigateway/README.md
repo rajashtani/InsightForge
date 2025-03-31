@@ -1,5 +1,41 @@
+# API Gateway on a Local Kubernetes Instance with Multipass
+
+## Introduction
 This guide provides a step-by-step process for developers to set up a local API Gateway using Multipass and MicroK8s on an Ubuntu virtual machine. For this project, I used a Mac Pro with an Apple M2 Pro processor and 32GB of RAM, ensuring smooth performance for running the VM and Kubernetes cluster locally. By leveraging Multipass to create a lightweight VM and MicroK8s for a minimal Kubernetes cluster, you can quickly deploy the APISIX API Gateway and a demo application for testing. This setup is ideal for development, experimentation, or learning purposes, offering a self-contained environment that mirrors cloud-based Kubernetes deployments. The process includes VM creation, Kubernetes configuration, APISIX installation, dashboard access, and deployment of a sample application, all tailored for a local workflow.
 
+---
+## Architecture Overview
+
+The following network block diagram illustrates the architecture of the local API Gateway setup, showing the key components and their network interactions. This includes the host machine (Mac Pro), the Ubuntu VM managed by Multipass, the MicroK8s Kubernetes cluster, the APISIX API Gateway components, and the demo application, all connected via specific IPs and ports.
+
+```mermaidgraph TD
+    A[<br> Host Machine <br>] -->|Multipass| B[Ubuntu VM: apigateway <br> IP: 192.168.64.15]
+
+    B -->|Hosts| C[MicroK8s Cluster <br> Single Node]
+
+    subgraph MicroK8s Cluster
+        C --> D[Kube-System Namespace]
+        C --> E[Ingress-APISIX Namespace]
+        C --> F[App Namespace]
+
+        D -->|Service: kubernetes-dashboard <br> Port: 443| G[Kubernetes Dashboard <br> Exposed via Port Forward <br> 192.168.64.15:10443]
+        
+        E --> H[APISIX Gateway <br> NodePort: 32178 <br> ClusterIP: 10.152.183.220]
+        E --> I[APISIX Admin <br> ClusterIP: 10.152.183.23 <br> Port: 9180]
+        E --> J[APISIX Ingress Controller <br> ClusterIP: 10.152.183.253 <br> Port: 80]
+        E --> K[ETCD Cluster <br> ClusterIP: 10.152.183.21 <br> Ports: 2379, 2380]
+
+        F --> L[App Service <br> ClusterIP: 10.152.183.204 <br> Port: 8080]
+        F --> M[App Deployment <br> Pod IP: Dynamic]
+    end
+
+    A -->|HTTP Request <br> localhost:32178| H
+    H -->|Routes Traffic| L
+    G -->|HTTPS Access <br> Token Auth| A
+    J -->|Manages| H
+    K -->|Stores Config| H
+    M -->|Serves| L
+```
 ---
 
 ## Prerequisites
