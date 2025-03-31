@@ -9,6 +9,7 @@ This guide provides a step-by-step process for developers to set up a local API 
 The following network block diagram illustrates the architecture of the local API Gateway setup, showing the key components and their network interactions. This includes the host machine (Mac Pro), the Ubuntu VM managed by Multipass, the MicroK8s Kubernetes cluster, the APISIX API Gateway components, and the demo application, all connected via specific IPs and ports.
 
 ```mermaid
+%%{ init: { 'theme': 'neutral' } }%%
 graph TD
     A[<br> Host Machine <br>] -->|Multipass| B[Ubuntu VM: apigateway <br> IP: 192.168.64.15]
 
