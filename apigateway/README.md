@@ -292,7 +292,6 @@ curl localhost:32178
 ## Notes
 
 - Replace `192.168.64.15` with your VM’s IP if it differs.
-- Ensure all YAML files (`namespace.yaml`, `deployment.yaml`, `service.yaml`, `ingress.yaml`) are prepared beforehand.
 - For APISIX v2.x, adjust the `ADMIN_API_VERSION` to `v2` in Step 4.
 
 This setup provides a fully functional local API Gateway on Kubernetes for development and testing purposes.
