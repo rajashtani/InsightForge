@@ -288,6 +288,7 @@ curl localhost:32178
 }
 ```
 <img src="./kube2.jpg">
+
 ---
 
 ## Notes
