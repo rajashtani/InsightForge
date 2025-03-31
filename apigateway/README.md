@@ -48,14 +48,11 @@ graph TD
     classDef f fill:#9fecf8,stroke:#333
     classDef p fill:#bfb,stroke:#333
     classDef q fill:#8c93e6,stroke:#333
-    classDef r fill:#d6e68c,stroke:#333
     classDef t fill:#db7037,stroke:#333
 
-    class A f
-    class D,E,F p
-    class H,I,J,K q
-    class L,M r
-    class G f
+    class G,A,D q
+    class E,H,I,J,K p
+    class F,L,M f
     class B,C t
 ```
 ---
