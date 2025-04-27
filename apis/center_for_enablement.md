@@ -224,6 +224,3 @@ Okay, here is the compact maturity model in standard Markdown table format. Plea
 **Track your team's progress and see how the C4E can help you grow.**
 
 <img src="./api_maturity_model_wrapped.svg">
----
-
-**Find your level and reach out to the API Center for Enablement (C4E) to accelerate your journey!**
