@@ -215,10 +215,6 @@ Key Performance Indicators (KPIs) provide measurable data points that reflect th
 *   **Combine Quantitative and Qualitative Data:** KPIs provide the objective 'what,' but maturity assessments, team feedback, and C4E interactions provide the crucial 'why.' Use both quantitative KPI data and qualitative insights for a holistic view and effective enablement planning.
 *   **Iterate:** The maturity model and the chosen KPIs may need refinement over time as the organization's API strategy evolves and the C4E platform matures. Be prepared to adapt.
 
-Okay, here is the compact maturity model in standard Markdown table format. Please note that standard Markdown does not support cell background colors, so the color coding is lost. I've used bold for emphasis where appropriate.
-
----
-
 ### **API Maturity Model: Level Up Your APIs!**
 
 **Track your team's progress and see how the C4E can help you grow.**
