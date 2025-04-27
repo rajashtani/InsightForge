@@ -6,7 +6,7 @@ This chapter defines the foundational protocols, standards, and configurations e
 
 ## 1. Design Principles
 
-**Definition**: Design principles are fundamental guidelines that govern API architecture to ensure reliability, scalability, and maintainability. These principles apply across all API protocols and establish a consistent approach to resource management, communication, and error handling.
+These design principles are fundamental guidelines that govern API architecture to ensure reliability, scalability, and maintainability. These principles apply across all API protocols and establish a consistent approach to resource management, communication, and error handling.
 
 - **Resource-Oriented Design**: APIs represent data and functionality as resources (e.g., users, orders), accessed via unique identifiers or endpoints.
 - **Statelessness**: Each request contains all necessary information, independent of prior requests, to enable scalability and fault tolerance.
@@ -34,7 +34,7 @@ graph TD
 
 ### 2.1 RESTful Architecture
 
-**Definition**: REST (Representational State Transfer) is an architectural style that uses HTTP to manage resources through stateless communication. Resources are identified by URIs (e.g., `/users/123`), and actions are performed using HTTP methods: `GET` (retrieve), `POST` (create), `PUT` (update), `DELETE` (delete), and `PATCH` (partial update). Each request is independent, and responses may be cached using HTTP headers.
+REST (Representational State Transfer) is an architectural style that uses HTTP to manage resources through stateless communication. Resources are identified by URIs (e.g., `/users/123`), and actions are performed using HTTP methods: `GET` (retrieve), `POST` (create), `PUT` (update), `DELETE` (delete), and `PATCH` (partial update). Each request is independent, and responses may be cached using HTTP headers.
 
 **Detailed Explanation**: REST relies on HTTP’s built-in features, such as status codes (e.g., 200 OK, 404 Not Found) and headers (e.g., `Content-Type`), to facilitate communication. Resources are typically represented in JSON, and statelessness ensures that servers do not retain client context between requests, enabling load balancing across multiple instances.
 
@@ -146,7 +146,7 @@ sequenceDiagram
 
 ### 2.2 gRPC
 
-**Definition**: gRPC is a Remote Procedure Call framework that uses **Protocol Buffers** (Protobuf) for interface definition and HTTP/2 for transport. It enables efficient, type-safe communication between services, supporting unary calls, server streaming, client streaming, and bidirectional streaming.
+gRPC is a Remote Procedure Call framework that uses **Protocol Buffers** (Protobuf) for interface definition and HTTP/2 for transport. It enables efficient, type-safe communication between services, supporting unary calls, server streaming, client streaming, and bidirectional streaming.
 
 **Detailed Explanation**: gRPC employs Protobuf to define service contracts, generating client and server code in multiple languages. HTTP/2’s multiplexing reduces connection overhead, and binary serialization minimizes payload size compared to text-based formats like JSON. gRPC is designed for high-performance scenarios, such as microservices or distributed systems, where latency and throughput are critical.
 
@@ -259,7 +259,7 @@ message UserResponse { int32 id = 1; string name = 2; }
 
 ### 2.3 GraphQL
 
-**Definition**: GraphQL is a query language for APIs that enables clients to request specific data through a single endpoint (e.g., `/graphql`). It uses a schema to define data types and operations, including queries (data retrieval), mutations (data modification), and subscriptions (real-time updates).
+GraphQL is a query language for APIs that enables clients to request specific data through a single endpoint (e.g., `/graphql`). It uses a schema to define data types and operations, including queries (data retrieval), mutations (data modification), and subscriptions (real-time updates).
 
 **Detailed Explanation**: GraphQL’s schema-driven approach allows clients to specify the exact structure of responses, reducing data over-fetching and under-fetching compared to REST. Queries and mutations are stateless, while subscriptions use WebSockets for persistent connections. The single-endpoint design simplifies routing, and strong typing ensures response consistency.
 
@@ -423,7 +423,7 @@ type Query {
 
 ### 2.4 Versioning Strategy
 
-**Definition**: Versioning is a mechanism to manage API changes while maintaining compatibility with existing clients. REST uses URI or header-based versioning, gRPC employs package versioning in Protobuf, and GraphQL relies on schema evolution.
+Versioning is a mechanism to manage API changes while maintaining compatibility with existing clients. REST uses URI or header-based versioning, gRPC employs package versioning in Protobuf, and GraphQL relies on schema evolution.
 
 **Detailed Explanation**: Versioning ensures that updates (e.g., new fields, modified behavior) do not disrupt existing integrations. REST’s URI approach (e.g., `/v1/users`) is explicit and widely supported, while gRPC’s package versioning (e.g., `package v1.user`) is embedded in the service definition. GraphQL evolves schemas by adding fields and deprecating old ones, avoiding explicit versioning.
 
@@ -513,7 +513,7 @@ graph TD
 
 ### 2.5 Stateless Design
 
-**Definition**: Stateless design requires each API request to include all necessary data, independent of server-side state, using mechanisms like tokens for authentication.
+Stateless design requires each API request to include all necessary data, independent of server-side state, using mechanisms like tokens for authentication.
 
 **Detailed Explanation**: Statelessness eliminates server memory of prior requests, enabling any server to handle any request. This is achieved in REST with tokens (e.g., JWT), in gRPC with metadata, in GraphQL with stateless queries/mutations (subscriptions may use WebSockets), and in Kafka with stateless producers/consumers. Statelessness supports scalability and resilience in distributed systems.
 
@@ -606,7 +606,7 @@ graph TD
 
 ### 3.1 Response Format
 
-**Definition**: Response formats standardize the structure and encoding of API outputs. REST and GraphQL use JSON, gRPC uses Protocol Buffers, and Kafka supports JSON, Avro, or custom serializers.
+Response formats standardize the structure and encoding of API outputs. REST and GraphQL use JSON, gRPC uses Protocol Buffers, and Kafka supports JSON, Avro, or custom serializers.
 
 **Detailed Explanation**: JSON is a text-based, human-readable format widely used in REST and GraphQL for its simplicity and compatibility. Protocol Buffers, used by gRPC, is a binary format that reduces size and parsing overhead. Kafka’s flexibility allows JSON for readability or Avro for schema enforcement in event-driven systems.
 
@@ -640,7 +640,7 @@ graph TD
 
 ### 3.2 Error Handling
 
-**Definition**: Error handling defines the structure and delivery of failure responses, including codes, messages, and details. REST uses HTTP status codes, gRPC uses Protobuf status codes, and GraphQL uses a JSON error array.
+Error handling defines the structure and delivery of failure responses, including codes, messages, and details. REST uses HTTP status codes, gRPC uses Protobuf status codes, and GraphQL uses a JSON error array.
 
 **Detailed Explanation**: REST errors align with HTTP standards (e.g., 400 Bad Request), providing a JSON payload with details. gRPC uses predefined codes (e.g., `codes.InvalidArgument`) with optional messages. GraphQL returns errors within the response body, allowing partial success in queries.
 
