@@ -1,6 +1,6 @@
-# Chapter 1: API Specifications
+# API Specifications
 
-The **API Specifications** chapter defines the foundational protocols, standards, and configurations for designing and implementing APIs. This framework ensures consistency, scalability, and interoperability across systems, supporting **REST**, **gRPC**, **GraphQL**, and **Kafka**. API Gateways such as **APISIX** and **Kong** manage routing, security, and protocol bridging. Aimed at developers using **C#**, **Java**, **Python**, and **Go**, this chapter provides precise definitions, practical examples, and actionable configurations for building robust APIs.
+The **API Specifications** defines the foundational protocols, standards, and configurations for designing and implementing APIs. This framework ensures consistency, scalability, and interoperability across systems, supporting **REST**, **gRPC**, **GraphQL**, and **Kafka**. API Gateways such as **APISIX** and **Kong** manage routing, security, and protocol bridging. Aimed at developers using **C#**, **Java**, **Python**, and **Go**, this chapter provides precise definitions, practical examples, and actionable configurations for building robust APIs.
 
 ---
 
