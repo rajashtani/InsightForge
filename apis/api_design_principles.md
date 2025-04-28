@@ -1,4 +1,4 @@
-# API Design Principles: Protocols, Gateways, and Best Practices
+# API Design : Principles, Protocols, and Gateways
 
 This chapter defines the foundational protocols, standards, and configurations essential for designing and implementing modern APIs. It establishes a framework that ensures consistency, scalability, and interoperability across systems, with support for **REST**, **gRPC**, **GraphQL**, and **Kafka**. API Gateways such as **APISIX** and **Kong** play a critical role in managing routing, security, and protocol bridging. Targeted at developers working with **C#**, **Java**, **Python**, and **Go**, this chapter offers precise definitions, practical examples, and actionable configurations to guide the development of robust and efficient APIs.
 
