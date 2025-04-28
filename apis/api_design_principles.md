@@ -30,7 +30,7 @@ graph TD
 
 ---
 
-## 2. API Protocols and Specifications
+## 2. API Protocols
 
 ### 2.1 RESTful Architecture
 
@@ -421,7 +421,7 @@ type Query {
 
 ---
 
-### 2.4 Versioning Strategy
+## 3 Versioning Strategy
 
 Versioning is a mechanism to manage API changes while maintaining compatibility with existing clients. REST uses URI or header-based versioning, gRPC employs package versioning in Protobuf, and GraphQL relies on schema evolution.
 
@@ -511,7 +511,7 @@ graph TD
 
 ---
 
-### 2.5 Stateless Design
+## 4 Stateless Design
 
 Stateless design requires each API request to include all necessary data, independent of server-side state, using mechanisms like tokens for authentication.
 
@@ -603,9 +603,9 @@ Statelessness eliminates server memory of prior requests, enabling any server to
 
 ---
 
-## 3. Input/Output Standards
+## 5. Input/Output Standards
 
-### 3.1 Response Format
+### 5.1 Response Format
 
 Response formats standardize the structure and encoding of API outputs. REST and GraphQL use JSON, gRPC uses Protocol Buffers, and Kafka supports JSON, Avro, or custom serializers.
 
@@ -639,7 +639,7 @@ JSON is a text-based, human-readable format widely used in REST and GraphQL for 
 
 ---
 
-### 3.2 Error Handling
+### 5.2 Error Handling
 
 Error handling defines the structure and delivery of failure responses, including codes, messages, and details. REST uses HTTP status codes, gRPC uses Protobuf status codes, and GraphQL uses a JSON error array.
 
