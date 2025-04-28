@@ -49,6 +49,13 @@ sequenceDiagram
     G-->>C: Response
 ```
 
+**Best Practices**:
+- Use plural nouns for resource URIs (e.g., `/users` instead of `/user`).
+- Leverage HTTP status codes appropriately (e.g., 201 for created resources, 404 for not found).
+- Include pagination for large datasets (e.g., `?limit=10&offset=20`).
+- Support idempotency for `PUT` and `DELETE` operations.
+- Use query parameters for filtering and sorting (e.g., `/users?role=admin`).
+  
 **Examples**:
 - **C# (ASP.NET Core)**:
   ```csharp
@@ -110,13 +117,6 @@ sequenceDiagram
   }
   ```
 
-**Best Practices**:
-- Use plural nouns for resource URIs (e.g., `/users` instead of `/user`).
-- Leverage HTTP status codes appropriately (e.g., 201 for created resources, 404 for not found).
-- Include pagination for large datasets (e.g., `?limit=10&offset=20`).
-- Support idempotency for `PUT` and `DELETE` operations.
-- Use query parameters for filtering and sorting (e.g., `/users?role=admin`).
-
 **API Gateway Configuration**:
 - **APISIX**:
   ```yaml
@@ -172,6 +172,13 @@ message UserRequest { int32 id = 1; }
 message UserResponse { int32 id = 1; string name = 2; }
 ```
 
+**Best Practices**:
+- Define clear Protobuf messages with required fields to enforce data integrity.
+- Use streaming only when necessary (e.g., real-time data) to avoid complexity.
+- Include version numbers in package names (e.g., `v1.user`) for backward compatibility.
+- Handle deadlines and cancellations via context to prevent resource leaks.
+- Use gRPC’s built-in error codes (e.g., `codes.InvalidArgument`) consistently.
+
 **Examples**:
 - **C# (gRPC)**:
   ```csharp
@@ -220,13 +227,6 @@ message UserResponse { int32 id = 1; string name = 2; }
       return &pb.UserResponse{Id: req.Id, Name: "Jane Doe"}, nil
   }
   ```
-
-**Best Practices**:
-- Define clear Protobuf messages with required fields to enforce data integrity.
-- Use streaming only when necessary (e.g., real-time data) to avoid complexity.
-- Include version numbers in package names (e.g., `v1.user`) for backward compatibility.
-- Handle deadlines and cancellations via context to prevent resource leaks.
-- Use gRPC’s built-in error codes (e.g., `codes.InvalidArgument`) consistently.
 
 **API Gateway Configuration**:
 - **APISIX (gRPC Transcoding)**:
@@ -282,6 +282,13 @@ type Query {
 }
 ```
 
+**Best Practices**:
+- Define a clear schema with non-nullable fields (e.g., `ID!`) where required.
+- Limit query depth and complexity to prevent performance issues (e.g., using tools like `graphql-depth-limit`).
+- Use fragments for reusable field selections.
+- Implement pagination for list queries (e.g., `first`, `after` arguments).
+- Deprecate fields explicitly with `@deprecated` instead of removing them immediately.
+  
 **Examples**:
 - **C# (GraphQL.NET)**:
   ```csharp
@@ -389,13 +396,6 @@ type Query {
   }
   ```
 
-**Best Practices**:
-- Define a clear schema with non-nullable fields (e.g., `ID!`) where required.
-- Limit query depth and complexity to prevent performance issues (e.g., using tools like `graphql-depth-limit`).
-- Use fragments for reusable field selections.
-- Implement pagination for list queries (e.g., `first`, `after` arguments).
-- Deprecate fields explicitly with `@deprecated` instead of removing them immediately.
-
 **API Gateway Configuration**:
 - **APISIX**:
   ```yaml
@@ -437,6 +437,13 @@ graph TD
     D --> G["@"deprecated]
 ```
 
+**Best Practices**:
+- For REST, prefer URI versioning (e.g., `/v1/`) for clarity and simplicity.
+- In gRPC, increment package versions (e.g., `v2.user`) for major changes.
+- In GraphQL, add new fields instead of modifying existing ones, and use `@deprecated` with a reason.
+- Document version lifecycles and deprecation timelines.
+- Test backward compatibility before releasing new versions.
+  
 **Examples**:
 - **C# (ASP.NET Core)**:
   ```csharp
@@ -482,13 +489,6 @@ graph TD
   }
   ```
 
-**Best Practices**:
-- For REST, prefer URI versioning (e.g., `/v1/`) for clarity and simplicity.
-- In gRPC, increment package versions (e.g., `v2.user`) for major changes.
-- In GraphQL, add new fields instead of modifying existing ones, and use `@deprecated` with a reason.
-- Document version lifecycles and deprecation timelines.
-- Test backward compatibility before releasing new versions.
-
 **API Gateway Configuration**:
 - **APISIX (REST Versioning)**:
   ```yaml
@@ -517,6 +517,14 @@ Stateless design requires each API request to include all necessary data, indepe
 
 Statelessness eliminates server memory of prior requests, enabling any server to handle any request. This is achieved in REST with tokens (e.g., JWT), in gRPC with metadata, in GraphQL with stateless queries/mutations (subscriptions may use WebSockets), and in Kafka with stateless producers/consumers. Statelessness supports scalability and resilience in distributed systems.
 
+
+**Best Practices**:
+- Use JWT or similar tokens for authentication in REST and GraphQL.
+- Pass metadata in gRPC for context (e.g., auth tokens, request IDs).
+- Avoid server-side session storage; store state client-side or in external databases.
+- Ensure idempotency for operations to handle retries gracefully.
+- Validate tokens on each request to enforce security.
+  
 **Examples**:
 - **C# (ASP.NET Core with JWT)**:
   ```csharp
@@ -573,13 +581,6 @@ Statelessness eliminates server memory of prior requests, enabling any server to
       r.Run(":8000")
   }
   ```
-
-**Best Practices**:
-- Use JWT or similar tokens for authentication in REST and GraphQL.
-- Pass metadata in gRPC for context (e.g., auth tokens, request IDs).
-- Avoid server-side session storage; store state client-side or in external databases.
-- Ensure idempotency for operations to handle retries gracefully.
-- Validate tokens on each request to enforce security.
 
 **API Gateway Configuration**:
 - **APISIX (JWT Authentication)**:
@@ -657,7 +658,13 @@ sequenceDiagram
         S-->>C: {errors: [{message: "Invalid ID"}]}
     end
 ```
-
+**Best Practices**:
+- Return machine-readable error codes (e.g., "400") and human-readable messages.
+- Include detailed error descriptions (e.g., "ID must be positive") for debugging.
+- Use standard codes (HTTP for REST, gRPC codes for gRPC) to align with protocol conventions.
+- Log errors server-side with request context for traceability.
+- In GraphQL, allow partial success by isolating errors to specific fields.
+  
 **Examples**:
 - **C# (ASP.NET Core)**:
   ```csharp
@@ -704,13 +711,6 @@ sequenceDiagram
       r.Run(":8000")
   }
   ```
-
-**Best Practices**:
-- Return machine-readable error codes (e.g., "400") and human-readable messages.
-- Include detailed error descriptions (e.g., "ID must be positive") for debugging.
-- Use standard codes (HTTP for REST, gRPC codes for gRPC) to align with protocol conventions.
-- Log errors server-side with request context for traceability.
-- In GraphQL, allow partial success by isolating errors to specific fields.
 
 **API Gateway Error Handling**:
 - **APISIX**:
