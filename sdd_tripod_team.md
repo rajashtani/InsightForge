@@ -7,20 +7,17 @@
 It builds on 2025–2026 ecosystem momentum (GitHub Spec Kit, Tessl, Kiro, Augment Code) rather than claiming to invent SDD from scratch — just an opinionated, lightweight pattern emphasizing adversarial agent roles (Architect/Developer/Reviewer-Oracle), context hygiene via archiving, and minimal human ceremony for production-grade outcomes.
 
 ### Executive Summary
-As software development shifts toward fully agentic workflows, teams must balance rapid delivery with architectural rigor, traceability, and compliance — especially in regulated domains like finance, healthcare, and aerospace.
-Specification-Driven Development (SDD) has become a core 2025–2026 paradigm: structured specifications act as the central "contract," guiding AI agents to produce auditable, production-ready code and moving beyond loose "vibe coding."
-This builds on a maturing ecosystem, including:
 
-- **GitHub Spec Kit** (open-sourced September 2025): an agent-agnostic CLI + templates for spec → plan → tasks → implementation flows, compatible with Copilot, Claude Code, Gemini CLI, Cursor, and more;
-- **Tessl** (products launched in late 2025): an agent enablement platform with a Spec Registry (10,000+ pre-built specs for libraries/APIs) and  a framework for structured, versioned context to reduce hallucinations;
-- **Kiro** (launched mid-2025 by AWS): an agentic IDE centered on spec-driven development, converting natural prompts into executable requirements, designs, and tasks with strong production handoff;
-- **Augment Code**'s Context Engine (MCP-exposed in early 2026): deep semantic understanding of entire codebases to improve agent accuracy in complex settings.
+As software development shifts toward fully agentic workflows, teams face a fundamental tension: how to move fast with AI agents while maintaining the architectural rigor, traceability, and compliance that regulated domains demand. The answer is not better prompting — it is better *structure*.
+This article proposes the **Tripod Team**, a minimal three-person delivery unit built around **Specification-Driven Development (SDD)**: a paradigm where structured, versioned Markdown specifications act as the central "contract" guiding AI agents to produce auditable, 
+production-ready code. The Tripod consists of three roles — the **Spec Leg** (SME/Business Analyst), the **Build Leg** (AI Wrangler), and the **Truth Leg** (Domain Expert) — paired with a lightweight `.sdd/` Specification Vault that separates global standards from active feature 
+specs and archives completed work to keep agent context lean. Together, they deliver the throughput of a traditional two-pizza team with full traceability and adversarial validation — making it especially suited for high-stakes environments like finance, healthcare, and aerospace.
+This is not a theoretical proposal. It builds on a maturing ecosystem that has independently converged on the same insight: that structured specifications are the missing layer between human intent and agentic execution. GitHub's Spec Kit, Amazon's Kiro IDE, Tessl's Spec Registry, and Augment Code's Context Engine each approach this from a different angle — CLI tooling, IDE-level spec-to-task flows, pre-built spec libraries, and deep codebase understanding respectively. The Tripod Team pattern is an opinionated, lightweight synthesis: it layers a human team model and a governance convention (the `.sdd/` vault) on top of this ecosystem, prioritizing auditability and adversarial checking for mission-critical systems.
 
-Here is a lightweight, opinionated pattern optimized for high-stakes environments: the Tripod Team (SME/Business Analyst as Spec Leg, AI Wrangler as Build Leg, Domain Expert as Truth Leg) paired with a simple .sdd/ Specification Vault. It separates global "Laws" from active specs, uses role-specific agent instructions, and archives completed work to keep context lean, and relies on green spec-derived tests + expert validation for completion.
-This three-person pod delivers traditional two-pizza-team throughput with full traceability and adversarial checking — leveraging ecosystem momentum while prioritizing auditability and governance for mission-critical systems.
+The result is a lean, compliant, and repeatable agentic workflow — one where green spec-derived tests and expert sign-off, not "vibes," define done.
 
 ## Agentic Software Engineering
-Agentic Software Engineering (Agentic SE), often referred to as SE 3.0, represents an emerging paradigm in software engineering where AI agents (autonomous or semi-autonomous intelligent systems) become active teammates that handle complex, goal-oriented tasks across much or all of the software development lifecycle (SDLC) — rather than just offering code completions or isolated suggestions.
+Agentic Software Engineering (Agentic SE), often referred to as SE 3.0, represents an emerging paradigm in software engineering where AI agents (autonomous or semi-autonomous intelligent systems) become active teammates that handle complex, goal-oriented tasks across much of — or the entirety of — the software development lifecycle — rather than just offering code completions or isolated suggestions.
 ####  Vibe coding process
 "Vibe Coding" represents the current baseline for many AI-assisted developers: a process of writing loose, natural language prompts and iterating until the output "feels" correct. 
 ```mermaid
@@ -59,11 +56,12 @@ Without a structured specification, the development lifecycle is prone to:
 #### The Agentic SE Lifecycle
 This is not presented as a rigid, one-size-fits-all SDLC, but as a practical, lightweight model we've found effective in pilots for regulated environments. It will continue to evolve with tool maturity and real-world feedback.
 ![image](./agentic-ai-loop.png)
+*Agentic SE lifecycle. Adapted from Hoda (2025) — "Toward Agentic Software Engineering Beyond Code: Framing Vision, Values, and Vocabulary." arXiv:2510.19692.*
 
 ## Specification Driven Development (SDD)
 SDD is a development paradigm where structured specifications act as the primary prompts and control surface for AI agents. Instead of "vibe coding" (writing loose natural language prompts), developers create structured, high-quality requirements that the AI uses to generate code.
 
-Two Schools of Thought: Some believe code is becoming a "byproduct" and the spec is the new source of truth. Others (including the author) argue that while specs drive generation, the executable code remains the source of truth that must be maintained.
+**Two Schools of Thought**: Some believe code is becoming a "byproduct" and the spec is the new source of truth. Others (including the author) argue that while specs drive generation, the executable code remains the source of truth that must be maintained.
 
 ### Defining a "Spec"
 A specification is more than a traditional Product Requirements Document (PRD). To be effective for AI, it should:
@@ -75,11 +73,11 @@ A specification is more than a traditional Product Requirements Document (PRD). 
 
 ## The Tripod Team
 *One Tripod delivers what a two-pizza team used to deliver, with an auditable spec trail.*
-#### What a Tripod is:
+**What a Tripod is**:
 A self-contained, three-person delivery unit built around AI-assisted development. Each leg owns a distinct phase of the spec-to-production lifecycle.
-#### What a Tripod is not:
+**What a Tripod is not**:
 A traditional scrum team. There is no backlog grooming, no story points, no sprint ceremonies. The spec is the plan. Green tests are the progress metric.
-#### A Tripod is done when:
+**A Tripod is done when**:
 - Specs are approved and version-controlled
 - All tests generated from specs are green
 - Domain expert has signed off output against real-world truth
@@ -117,18 +115,18 @@ graph TD
     classDef process fill:#2ecc71,stroke:#27ae60,color:#fff
 ```
 ### Why Tripod Works: The Power of Three in Agentic Development
-The Tripod isn't arbitrary minimalism — it's the smallest stable unit that delivers full-cycle accountability, adversarial rigor, and traditional throughput while keeping ceremony near-zero. Three humans strike an optimal balance in the agentic era:
+The Tripod is not arbitrary minimalism — it's the smallest stable unit that delivers full-cycle accountability, adversarial rigor, and traditional throughput while keeping ceremony near-zero. Three humans strike an optimal balance in the agentic era:
 
 - **Minimal viable separation of concerns without overlap waste**
 With only two people, roles blur: one person ends up owning both "spec" and "truth," eliminating the critical adversarial check that catches logic gaps, compliance violations, or hallucinated shortcuts. Three creates clean ownership — Spec Leg defines the contract, Build Leg executes via agents, Truth Leg acts as oracle — mirroring proven patterns like red-team/blue-team or author/editor/reviewer workflows, but at extreme minimal scale.
 - **Cognitive diversity and error resistance without coordination tax**
-Research on group problem-solving (e.g., Laughlin 2002 experiments) shows groups of three often outperform both pairs and larger teams in verifiable-truth tasks: enough perspectives to surface edge cases, but too few for factionalism or diffusion of responsibility. In regulated domains (finance ETL, aerospace), where zero-loss tolerance is mandatory, this triad reliably catches what a solo expert or duo might miss — without the communication overhead that kicks in at 5+ people (per Steiner's process-loss models and modern agile studies favoring 3–7).
+Research on group problem-solving (e.g., Laughlin's studies on intellective tasks) shows groups of three often outperform both pairs and larger teams in verifiable-truth tasks: enough perspectives to surface edge cases, but too few for factionalism or diffusion of responsibility. In regulated domains (finance ETL, aerospace), where zero-loss tolerance is mandatory, this triad reliably catches what a solo expert or duo might miss — without the communication overhead that kicks in at 5+ people (per Steiner's process-loss models and modern agile studies favoring 3–7).
 - **Leverages agentic amplification to match or exceed two-pizza throughput**
-Amazon's "two-pizza" rule (5–8 people) aimed to minimize bureaucracy and maximize ownership for fast innovation. In 2025–2026 agentic workflows, frontier models + structured SDD hand most implementation and even design iteration to agents. This shifts the human bottleneck from "writing code" to "steering, validating, and governing." A three-person pod — one for intent (SME/BA), one for orchestration (AI Wrangler), one for adversarial truth (Domain Expert) — delivers what a traditional 8–10 person scrum team used to, but with full traceability and green spec-tests. Several early AI-native startups operating with 3–5 humans and extensive agent support have demonstrated that small teams can reach significant scale.
+Amazon's "two-pizza" rule (5–8 people) aimed to minimize bureaucracy and maximize ownership for fast innovation. In 2025–2026 agentic workflows, frontier models + structured SDD hand most implementation and even design iteration to agents. This shifts the human bottleneck from "writing code" to "steering, validating, and governing." A three-person pod — one for intent (SME/BA), one for orchestration (AI Wrangler), one for adversarial truth (Domain Expert) — delivers what a traditional 8–10 person scrum team used to, but with full traceability and green spec-tests.
 - **Human-in-the-loop remains meaningful and sustainable**
-Full autonomy is still experimental (Gartner 2026 projections: <40% enterprise apps fully agentic). Hybrid wins: humans + agents outperform pure agents by significant margins in complex, high-stakes work (2025 studies show ~68% better reliability in hybrid setups). Three humans keep oversight distributed yet lightweight — no single point of failure, no burnout from one person juggling all gates, and easy scaling via multiple parallel Tripods (with shared foundations).
+Full autonomy is still experimental. Empirical research confirms the risk of removing human oversight: He et al. (2026) found that AI-assisted coding tools produce a statistically significant but *transient* velocity gain, while simultaneously introducing a *persistent* increase in code complexity and static analysis warnings — exactly the kind of silent quality drift that the Truth Leg (Domain Expert/Oracle) exists to catch. Three humans keep oversight distributed yet lightweight: no single point of failure, no burnout from one person juggling all gates, and easy scaling via parallel Tripods sharing common foundations.
 
-In short: Two is too fragile (no real adversarial check). Four+ reintroduces ceremony (meetings, alignment tax) that SDD aims to eliminate. Three is the sweet spot: stable, diverse, auditable, and maximally amplified by agents — delivering regulated-grade software at startup velocity.
+In short: A two-person unit is too fragile — it lacks a genuine adversarial check. Four or more people reintroduce coordination overhead. Three is the sweet spot: stable, diverse, auditable, and maximally amplified by agents — delivering regulated-grade software at startup velocity.
 
 | Team Size | Pros                                      | Cons in Agentic / Regulated Context                              | Fits Tripod Model? |
 |-----------|-------------------------------------------|------------------------------------------------------------------|--------------------|
@@ -206,7 +204,7 @@ In this model, the **Tripod** represents the human leadership unit, while the **
 The Pod expands the Tripod by incorporating specialized AI agents (e.g., Architect Agent, Developer Agent, Reviewer Agent) operating within the `.sdd/` specification environment.
 
 ## Specification Structure 
-In an Agentic AI workflow, a "Pod" is a team of specialized agents and human working toward a single goal. Rather than one "Generalist Agent" doing everything, you divide the .sdd/ folder into specialized "desks."
+In an Agentic AI workflow, a "Pod" is a team of specialized agents and humans working toward a single goal. Rather than one "Generalist Agent" doing everything, you divide the .sdd/ folder into specialized "desks."
 
 This prevents "context poisoning"—where the agent’s coding logic gets muddied by product requirements or vice-versa.
 
@@ -228,7 +226,7 @@ This prevents "context poisoning"—where the agent’s coding logic gets muddie
 │   └── archive/                 <-- Completed features (moved here to save context)
 ```
 
-Why this works for Agentic Apps:
+**Why this works for Agentic Apps**:
 
 - Separation of Concerns: You can point an "Architect Agent" specifically at the foundations/ and design.md files. It doesn't need to see the tasks.md or the raw code yet.
 - Conflict Resolution: If the Developer Agent tries to use a library not listed in engineering.md, the Reviewer Agent (referencing the same tech spec) will flag it.
@@ -270,7 +268,7 @@ Why this works for Agentic Apps:
 
 #### 2. The Build Leg (AI Wrangler)
 * **Primary Ownership**: `roles/developer.md` and `specs/[feature]/tasks.md`.
-* **Key Responsibility**: Managing the AI Developer Agent to ensure it follows the "Laws" defined in `engineering.md`.
+* **Key Responsibility**: Managing the AI Developer Agent to ensure it follows the "architecture" defined in `engineering.md`.
 * **Definition of Done**: All items in `tasks.md` are marked complete, and code achieves >80% unit test coverage.
 * **Onboarding Task**: Set up the initial `.sdd/` directory and have the Developer Agent generate a class structure from the `design.md`.
 
@@ -291,7 +289,8 @@ Why this works for Agentic Apps:
 
 ## Example Specification files
 
-The following examples illustrate specification files for an ETL feature: S3-to-Redshift Loader (s3-to-redshift).
+The following examples show specification files for an S3-to-Redshift ETL loader.
+
 #### 1. manifest.md (The Map)
 The manifest acts as the entry point for agents and humans to understand the current project state. Instead of the Agent crawling the entire directory to understand the project, it reads this file first to understand the current state and where to look next.
 ```markdown
@@ -489,3 +488,43 @@ The Tripod should therefore be seen as a scalable building block, not a replacem
 - In what scenarios does this pattern break — and what hybrid human/agent structures emerge when it does?
 
 These limitations are not fatal flaws — they reflect the early stage of agentic SE in production settings. The pattern is deliberately simple so that it can be iterated on quickly. Feedback from pilots in other domains (frontend, backend services, ML pipelines) will help refine it further.
+
+## References
+
+#### Academic Research
+
+1. **Laughlin, P. R., Bonner, B. L., & Miner, A. G. (2002).** Groups perform better than the best individuals on letters-to-numbers problems. *Organizational Behavior and Human Decision Processes, 88*(2), 605–620.
+   - Key finding: Three-person groups proposed more complex problem-solving strategies and outperformed even the best equivalent individuals on intellective tasks.
+2. **Laughlin, P. R., Hatch, E. C., Silver, J. S., & Boh, L. (2006).** Groups of three, four, and five perform better than individuals on letters-to-numbers problems: Effects of group size. *Journal of Personality and Social Psychology, 90*(4), 644–651.
+   - Key finding: Groups of 3, 4, and 5 all outperformed dyads and individuals; groups of 3 were *necessary and sufficient* — adding more members yielded no further gain.
+3. **Steiner, I. D. (1972).** *Group Process and Productivity.* Academic Press.
+   - Source for "process loss" models referenced in the Tripod Team rationale (coordination costs rising with group size).
+4. **Hoda, R. (2025).** Toward Agentic Software Engineering Beyond Code: Framing Vision, Values, and Vocabulary. *arXiv preprint arXiv:2510.19692v2.*  
+   - Used as the basis for the Agentic SE lifecycle diagram in this article.  
+   - URL: https://arxiv.org/abs/2510.19692
+5. **He, H., Miller, C., Agarwal, S., Kästner, C., & Vasilescu, B. (2026).** Speed at the Cost of Quality: How Cursor AI Increases Short-Term Velocity and Long-Term Complexity in Open-Source Projects. *arXiv preprint arXiv:2511.04427v3.*  To appear in: *Proceedings of MSR '26, April 2026, Rio de Janeiro, Brazil.*  
+   - Empirical grounding for the Truth Leg rationale: AI-assisted coding increases velocity short-term but introduces persistent complexity without human oversight.  
+   - URL: https://arxiv.org/abs/2511.04427
+
+#### Industry Research & Analyst Reports
+
+6. **Gartner (August 26, 2025).** Gartner Predicts 40% of Enterprise Applications Will Feature Task-Specific AI Agents by 2026, Up from Less Than 5% in 2025. Gartner Newsroom.
+   - URL: https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025
+7. **Gartner (June 25, 2025).** Gartner Predicts Over 40% of Agentic AI Projects Will Be Canceled by End of 2027.
+   - URL: https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027
+
+#### Ecosystem Tools Referenced
+
+8. **GitHub Spec Kit** (open-sourced September 2025): Agent-agnostic CLI and templates for spec-driven development.
+   - URL: https://github.com/github/spec-kit
+9. **Kiro** (Amazon, public preview July 2025): Agentic IDE centered on spec-driven development.
+   - URL: https://kiro.dev
+10. **Tessl**: Agent enablement platform with a Spec Registry for structured, versioned AI context.
+    - URL: https://tessl.io
+11. **Augment Code** Context Engine (MCP-exposed early 2026): Deep semantic codebase understanding for agent accuracy.
+    - URL: https://augmentcode.com
+
+#### Conceptual Frameworks Cited
+
+12. **Behavior-Driven Development (BDD) / Given-When-Then**: Originated by Dan North (2006). See: https://dannorth.net/introducing-bdd/
+13. **Amazon Two-Pizza Rule**: Jeff Bezos's team-sizing heuristic. Referenced in: Bryar, C. & Carr, B. (2021). *Working Backwards.* St. Martin's Press.
