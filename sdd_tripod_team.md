@@ -75,11 +75,11 @@ A specification is more than a traditional Product Requirements Document (PRD). 
 
 ## The Tripod Team
 *One Tripod delivers what a two-pizza team used to deliver, with an auditable spec trail.*
-**What a Tripod is**:
+#### What a Tripod is:
 A self-contained, three-person delivery unit built around AI-assisted development. Each leg owns a distinct phase of the spec-to-production lifecycle.
-**What a Tripod is not**:
+#### What a Tripod is not:
 A traditional scrum team. There is no backlog grooming, no story points, no sprint ceremonies. The spec is the plan. Green tests are the progress metric.
-**A Tripod is done when**:
+#### A Tripod is done when:
 - Specs are approved and version-controlled
 - All tests generated from specs are green
 - Domain expert has signed off output against real-world truth
